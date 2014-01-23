@@ -1,0 +1,16 @@
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Your Registered Companies</h1>
+<span>
+  <% if @num_times > 5 %>
+        You have accessed index on <%= pluralize @num_times, 'time', 'times' %></span>
+  <% end %>
+  <% @companies.each do |company| %>
+    <div class='entry'>
+      <h3><%= link_to(company.name, line_items_path(:company_id => company), :method => :post) %></h3>
+      <%= sanitize(company.description) %>
+      <%= button_to 'Add to Cart', line_items_path(:company_id => company) %>
+    </div>
+<% end %>
