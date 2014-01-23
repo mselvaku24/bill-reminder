@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CompaniesControllerTest < ActionController::TestCase
   setup do
-    @company = companies(:one)
+    @company = companies(:energex)
     @update = {
       :name => "company number 1",
       :description => "company number 1 desc"
